@@ -6,7 +6,7 @@ Team:
 * Christopher Reutz
 * Saurabh Bhatt
 * Pavitra Bagirthi
-* Jeff Hartun
+* Jeff Hartung
 
 Kaggle Database: https://www.kaggle.com/moltean/fruits
 
