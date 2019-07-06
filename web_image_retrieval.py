@@ -10,7 +10,7 @@ from sklearn.neighbors import NearestNeighbors
 choice = int(input('Input choice from 0 to 544: '))
 
 # create dataframe where features are converted to a list
-selection_df = pd.read_csv('web_app/fruits_sample.csv')
+selection_df = pd.read_csv('static/fruits_sample.csv')
 selection_df['features'] = selection_df.values[:,2:].tolist()
 selection_df = selection_df[['filename','fruit','features']]
 
