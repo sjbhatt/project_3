@@ -7,39 +7,40 @@ function deleteFruitRows() {
 // 'Filter Table' button
 var button = d3.select('#filter-btn');
 
-function insertFruits(fruitData){
-  // iterate through all the input fields
+function insertFruits(fruitData) {
+  // iterate through all the results
 
-  var selection = d3.select('#results')
-    .selectAll('div')
-    .data(fruitData)
-    .enter();
+  console.log(fruitData.length);
 
-  for (var i = 0; i < fruitData.length; i++) {
+  for (i = 0; i < fruitData.length; i++) {
+
     var fDdistance = fruitData[i].distance;
     var fDfilename = fruitData[i].filename;
     var fDfruit = fruitData[i].fruit;
     var fDfilepath = '/static/images/' + fDfruit + '/' + fDfilename
+  
+    console.log(fDdistance);
+    console.log(fDfilename);
+    console.log(fDfruit);
 
-    if ((i % 6) == 0) {
-    selection.append('div')
+    if (i % 6 == 0) {
+      var fruitRow = d3.select('#results')
+        .append('div')
         .attr('class', 'row')
-        .attr('id', 'fruit_row')
+        .attr('id', 'fruit_row');
     };
 
-    selection.append('div')
-        .attr('class', 'col-md-2 col-sm-4 col-xs-6')
-        .attr('id', 'fruit_item')
-        .enter()
-          .append('img')
-            .attr('class', 'center-block')
-            .attr('src', fDfilepath)
-          .append('p')
-            .attr('class', 'center small')
-            .text(fDfruit)
+    var fruitItem = fruitRow.append('div')
+      .attr('class', 'col-md-2 col-sm-4 col-xs-6')
+      .attr('id', 'fruit_item')
+    fruitItem.append('img')
+      .attr('src', fDfilepath)
+      .attr('class', 'center-block')
+    fruitItem.append('p')
+      .attr('class', 'center small')
+      .html('<b>' + fDfruit + '</b><br>' + fDdistance + '<br>' + fDfilename)
   };
-  selection.exit();
-}
+};
 
 // filter the database
 button.on('click', function(event) {
