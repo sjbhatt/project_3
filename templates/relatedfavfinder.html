@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
-<body>
+<body onload = 'pullData()'>
   <div class="container">
     <div class="row" id='top-section'>
       <div class="col-md-6">
@@ -26,13 +26,10 @@
               <form>
                 <div class="form-group">
                   <ul class="list-group" id="filters">
-                    <li class="filter list-group-item">
-                      <label for="date">Enter a number from 0 to 544</label>
-                      <input class="form-control" id="fruit_choice" type="text" placeholder="">
-                    </li>
+                    
                   </ul>
                 </div>
-                <button id="filter-btn" type="submit" class="btn btn-info">Search</button>
+                <button id="filter-btn" type="submit" onclick="pullData()" class="btn btn-info">Start Over</button>
               </form>
             </div>
           </div>
