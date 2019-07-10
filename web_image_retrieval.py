@@ -12,7 +12,7 @@ choice = int(input('Input choice from 0 to 544: '))
 # create dataframe where features are converted to a list
 selection_df = pd.read_csv('static/fruits_sample.csv')
 selection_df['features'] = selection_df.values[:,2:].tolist()
-selection_df = selection_df[['filename','fruit','features']]
+selection_df = selection_df[['fruit_number','filename','fruit','features']]
 
 # calculate 40 k-nearest neighors based on user 'choice'
 X = np.array(selection_df['features'].values.tolist())
@@ -23,6 +23,6 @@ selection_df = selection_df.iloc[idx,:]
 selection_df = selection_df.assign(distance = distances.tolist()[0])
 
 # output to json
-output_df = selection_df[['fruit', 'filename', 'distance']]
+output_df = selection_df[['fruit_number','fruit', 'filename', 'distance']]
 json_output = output_df.to_json(orient='records')
 print(json_output)
