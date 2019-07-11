@@ -21,6 +21,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        li {
+            font-size:18px;
+            color:black;
+            line-height:2.0;
+        }
+    </style>
 
 </head>
 
@@ -85,8 +92,29 @@
                 <h1 class="page-header">Project Summary
                     <small></small>
                 </h1>
-                <p>The purpose of this project is to create a machine learning algorithm which can determine the type of fruit an image presents. The database has 74681 images of 109 fruits/vegetables. We ran supervised and unsupervised machine learning algorithms to determine the fruit contained in each 100x100 image. We used Logistic Regression, and our testing score was 0.989 
-                </p>
+                <ul>
+                    <li>Kaggle Dataset:
+                        <ul>
+                            <li>74K images of 109 fruits & vegetables</li>
+                            <li>Each image is a 30,000 dimensional vector (100 pixels x 100 pixels  x 3 colors) </li>
+                        </ul>
+                    </li>
+                    <li>Image Feature Extraction Using <a href="https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a">Transfer Learning</a></li>
+                    <img src="/static/vgg16.png" style="width:706px;height:380px;margin:30px;">
+                    <li>Unsupervised Learning
+                        <ul>
+                            <li><a href=/relatedFavfinder>Similar image retrieval using K-nearest neighbors</a></li>
+                            <li>The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KDTree.html">KD-Tree data structure</a> was used to speed-up K-NN queries</li>
+                        </ul>
+                    </li>
+                    <li>Supervised Learning
+                        <ul>
+                            <li>Train/Test Set: 58,266/19,548 images</li>
+                            <li>Logistic Regression</li>
+                            <li>Neural Network</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- /.row -->
